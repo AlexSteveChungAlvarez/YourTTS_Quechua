@@ -94,6 +94,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+coquiTTS_env/
 
 # Spyder project settings
 .spyderproject
@@ -133,6 +134,7 @@ recipes/vctk/VCTK/*
 recipes/**/*.npy
 recipes/**/*.json
 VCTK-Corpus-removed-silence/*
+datasets
 
 # ignore training logs
 trainer_*_log.txt
@@ -168,3 +170,6 @@ internal/*
 wandb
 depot/*
 coqui_recipes/*
+audios
+yourTTS
+results.zip

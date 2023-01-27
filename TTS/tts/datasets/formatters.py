@@ -50,6 +50,18 @@ def coqui(root_path, meta_file, ignored_speakers=None):
         print(f" | > [!] {not_found_counter} files not found")
     return items
 
+def quechua(root_path,meta_file, **kwargs):
+    txt_file = os.path.join(root_path, meta_file)
+    items = []
+    speaker_name = "gui"
+    with open(txt_file, mode="r", encoding="cp1252") as f:
+        for line in f:
+            cols = line.split("\"")
+            wav_title = cols[0].split(" ")[1]
+            wav_file = os.path.join(root_path,wav_title+".wav")
+            text = cols[1]
+            items.append({"text":text,"audio_file":wav_file,"speaker_name":speaker_name,"root_path":root_path})
+    return items
 
 def tweb(root_path, meta_file, **kwargs):  # pylint: disable=unused-argument
     """Normalize TWEB dataset.
